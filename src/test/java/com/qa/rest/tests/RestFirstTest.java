@@ -9,36 +9,23 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.base.BaseTest;
-import com.qa.configuration.RestConfiguration;
 import com.qa.request_body.UserRequest;
 import com.qa.response_body.UserResponse;
 import com.rest.coreclasses.Constant;
-import com.rest.coreclasses.RestClient;
 
-public class RestFirstTest {
+public class RestFirstTest extends BaseTest {
 
-	BaseTest basetest;
-	RestClient restClient;
-	String requestURL;
 	CloseableHttpResponse closeableHttpResponse;
 	HashMap<String, String> headers;
 
-	@BeforeTest
-	public void setUp() throws ClientProtocolException, IOException {
-
-		restClient = new RestClient();
-		basetest = new BaseTest();
-		requestURL = RestConfiguration.getBaseURL()+RestConfiguration.getApiURL();
-
-	}
-
 	@Test(description = "This get call", priority = 1)
 	public void getAPITest() throws ClientProtocolException, IOException {
+		
+		 test = extent.createTest("Test Case 1", "PASSED test case");
 
 		closeableHttpResponse = restClient.get(requestURL);
 
