@@ -8,12 +8,12 @@ public class RestConfiguration {
 		return System.getProperty(key);
 	}
 
-	public static String getRemoteURL() {
-		return get("env.url");
+	public static String getBaseURL() {
+		return get("env.baseurl");
 	}
 
-	public static String getBrowserName() {
-		return get("env.serviceurl");
+	public static String getApiURL() {
+		return get("env.apiurl");
 	}
 
 	public static String getDriverEnvironment() {
