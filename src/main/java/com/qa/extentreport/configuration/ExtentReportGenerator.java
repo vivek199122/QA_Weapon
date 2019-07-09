@@ -1,7 +1,12 @@
 package com.qa.extentreport.configuration;
 
+import java.lang.reflect.Method;
+
+import org.testng.ITestResult;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
@@ -18,7 +23,7 @@ public class ExtentReportGenerator {
 
 	public void startExtentReport() {
 
-		htmlReporter = new ExtentHtmlReporter(System.getProperty("./test-output/ExtentReport.html"));
+		htmlReporter = new ExtentHtmlReporter("./test-output/ExtentReport.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 
@@ -32,20 +37,30 @@ public class ExtentReportGenerator {
 		htmlReporter.config().setTheme(Theme.STANDARD);
 	}
 
+	public void captureTestResult(ITestResult result) {
+
+		if (result.getStatus() == ITestResult.FAILURE) {
+			test.log(Status.FAIL, "Test Case Failed is " + result.getName());
+			test.log(Status.FAIL, "Test Case Failed is " + result.getThrowable());
+		} else if (result.getStatus() == ITestResult.SKIP) {
+			test.log(Status.SKIP, "Test Case Skipped is " + result.getName());
+		} else {
+			test.log(Status.PASS, "Test Case Passed is  " + result.getName());
+		}
+	}
+
 	public void endExtentReport() {
 
 		extent.flush();
-
 	}
-	
-	public void createExtentReport() {
-		
-		//http://www.tothenew.com/blog/how-to-use-extentreport-in-a-framework-2/
-		//http://learn-automation.com/extent-report-with-selenium-webdriver/
-		//https://www.swtestacademy.com/extentreports-testng/
-		//https://www.softwaretestingmaterial.com/generate-extent-reports/
-		//https://www.softwaretestinghelp.com/extent-reports-selenium-webdriver/	
-		
+
+	public void createExtentReport(Method method) {
+
+		test = extent.createTest(method.getName());
+		test.assignAuthor("Vivek Parmar");
+		test.assignCategory("Regression--PROD");
+		test.log(Status.INFO, "Executing Test Case:  " + method.getName());
+
 	}
 
 }

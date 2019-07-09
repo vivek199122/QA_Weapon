@@ -78,7 +78,7 @@ public class RestFirstTest extends BaseTest {
 		closeableHttpResponse = restClient.post(requestURL, userjsonreqeustbody, headers);
 
 		int statusCode = closeableHttpResponse.getStatusLine().getStatusCode();
-		Assert.assertEquals(statusCode, Constant.RESPONSE_STATUS_CODE_201);
+		Assert.assertEquals(statusCode, Constant.RESPONSE_STATUS_CODE_200);
 
 		String userresponseString = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
 		System.out.println(userresponseString);

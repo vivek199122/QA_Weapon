@@ -1,10 +1,11 @@
 package com.qa.base;
 
-import java.io.IOException;
+import java.lang.reflect.Method;
 
-import org.apache.http.client.ClientProtocolException;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -35,18 +36,25 @@ public class BaseTest {
 	}
 
 	@BeforeTest
-	public void beforeTest() throws ClientProtocolException, IOException {
-		
-		requestURL = RestConfiguration.getBaseURL() + RestConfiguration.getApiURL();
+	public void beforeTest() {
+
 	}
 
 	@BeforeMethod
-	public void beforeMethod() {
+	public void beforeMethod(Method method) {
 
+		requestURL = RestConfiguration.getBaseURL() + RestConfiguration.getApiURL();
+		extentreportgenerator.createExtentReport(method);
 	}
 
 	@AfterMethod
-	public void afterMethod() {
+	public void afterMethod(ITestResult result) {
+
+		extentreportgenerator.captureTestResult(result);
+	}
+
+	@AfterTest
+	public void afterTest() {
 
 	}
 
@@ -54,6 +62,5 @@ public class BaseTest {
 	public void afterSuite() {
 
 		extentreportgenerator.endExtentReport();
-
 	}
 }
