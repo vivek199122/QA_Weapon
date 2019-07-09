@@ -37,5 +37,15 @@ public class ExtentReportGenerator {
 		extent.flush();
 
 	}
+	
+	public void createExtentReport() {
+		
+		//http://www.tothenew.com/blog/how-to-use-extentreport-in-a-framework-2/
+		//http://learn-automation.com/extent-report-with-selenium-webdriver/
+		//https://www.swtestacademy.com/extentreports-testng/
+		//https://www.softwaretestingmaterial.com/generate-extent-reports/
+		//https://www.softwaretestinghelp.com/extent-reports-selenium-webdriver/	
+		
+	}
 
 }

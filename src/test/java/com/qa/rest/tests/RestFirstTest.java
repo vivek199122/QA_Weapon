@@ -24,8 +24,8 @@ public class RestFirstTest extends BaseTest {
 
 	@Test(description = "This get call", priority = 1)
 	public void getAPITest() throws ClientProtocolException, IOException {
-		
-		 test = extent.createTest("Test Case 1", "PASSED test case");
+
+		//test = extent.createTest("Test Case 1", "This is GET call");
 
 		closeableHttpResponse = restClient.get(requestURL);
 
