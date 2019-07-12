@@ -25,8 +25,6 @@ public class RestFirstTest extends BaseTest {
 	@Test(description = "This get call", priority = 1)
 	public void getAPITest() throws ClientProtocolException, IOException {
 
-		//test = extent.createTest("Test Case 1", "This is GET call");
-
 		closeableHttpResponse = restClient.get(requestURL);
 
 		// a. status Code
@@ -78,7 +76,7 @@ public class RestFirstTest extends BaseTest {
 		closeableHttpResponse = restClient.post(requestURL, userjsonreqeustbody, headers);
 
 		int statusCode = closeableHttpResponse.getStatusLine().getStatusCode();
-		Assert.assertEquals(statusCode, Constant.RESPONSE_STATUS_CODE_200);
+		Assert.assertEquals(statusCode, Constant.RESPONSE_STATUS_CODE_201);
 
 		String userresponseString = EntityUtils.toString(closeableHttpResponse.getEntity(), "UTF-8");
 		System.out.println(userresponseString);

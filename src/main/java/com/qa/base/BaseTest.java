@@ -1,6 +1,7 @@
 package com.qa.base;
 
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -10,6 +11,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
+import com.mobile.coreclasses.PlatformFactory;
+import com.qa.configuration.MobileConfiguration;
 import com.qa.configuration.RestConfiguration;
 import com.qa.extentreport.configuration.ExtentReportGenerator;
 import com.rest.coreclasses.RestClient;
@@ -20,11 +23,13 @@ public class BaseTest {
 	public static RestClient restClient;
 	public static String requestURL;
 	ExtentReportGenerator extentreportgenerator;
+	PlatformFactory platformfactory;
 
 	public BaseTest() {
 
 		extentreportgenerator = new ExtentReportGenerator();
 		restClient = new RestClient();
+		platformfactory = new PlatformFactory();
 
 	}
 
@@ -36,8 +41,9 @@ public class BaseTest {
 	}
 
 	@BeforeTest
-	public void beforeTest() {
+	public void beforeTest() throws MalformedURLException {
 
+		platformfactory.createDriver(MobileConfiguration.getPlatform());
 	}
 
 	@BeforeMethod
