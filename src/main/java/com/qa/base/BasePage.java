@@ -9,6 +9,7 @@ import org.testng.Assert;
 
 import com.mobile.coreclasses.PlatformFactory;
 import com.qa.configuration.MobileConfiguration;
+import com.web.coreclasses.DriverFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -17,11 +18,23 @@ public class BasePage {
 
 	public WebDriver driver;
 	public IOSDriver iosdriver;
+	public AndroidDriver androiddriver;
 	PlatformFactory platformfactory;
+	DriverFactory driverfactory;
+
+	private static ThreadLocal<WebDriver> driverinstance = new ThreadLocal<>();
 
 	public BasePage() {
 		platformfactory = new PlatformFactory();
-		driver = PlatformFactory.androiddriver;
+		if (MobileConfiguration.getPlatform().equalsIgnoreCase("android")) {
+			androiddriver = PlatformFactory.androiddriver;
+		} else if (MobileConfiguration.getPlatform().equalsIgnoreCase("ios")) {
+			iosdriver = PlatformFactory.iosdriver;
+		} else {
+			driverfactory = new DriverFactory();
+			driver = DriverFactory.driver;
+		}
+
 	}
 
 	public void click(By by) throws IOException {
@@ -34,8 +47,6 @@ public class BasePage {
 			driver.findElement(by).click();
 		} catch (Exception e) {
 			Assert.assertTrue(false, "Fail to click on link : " + by + " on page : " + e.getMessage());
-			// rootLogger.warn("Fail to click on link : " + by + " on page : " +
-			// selenium.getWrappedandroiddriver().getCurrentUrl());
 		}
 	}
 
@@ -46,7 +57,7 @@ public class BasePage {
 	}
 
 	public void sendkeys(By by, String keys) {
-		//getHighlightElement(driver.findElement(by));
+		// getHighlightElement(driver.findElement(by));
 		driver.findElement(by).sendKeys(keys);
 	}
 

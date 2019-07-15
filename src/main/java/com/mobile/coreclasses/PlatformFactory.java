@@ -30,7 +30,7 @@ public class PlatformFactory {
 			// capabilities.setCapability("app","C:\\Users\\vparmar\\Downloads\\moneycontrol.apk");
 			capabilities.setCapability("app", "/Users/vivek/Downloads/moneycontrol.apk");
 			capabilities.setCapability("noReset", "true");
-			capabilities.setCapability("fullReset", "false");
+			capabilities.setCapability("ful	lReset", "false");
 			capabilities.setCapability("appActivity", "com.moneycontrol.handheld.SplashActivity");
 
 			return capabilities;
