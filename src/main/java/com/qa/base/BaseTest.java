@@ -47,9 +47,15 @@ public class BaseTest {
 	@BeforeTest
 	public void beforeTest() throws MalformedURLException {
 
-		platformfactory.createDriver(MobileConfiguration.getPlatform());
-		MutableCapabilities caps = DriverFactory.setup(WebConfiguration.getDriverEnvironment());
-		DriverFactory.build(WebConfiguration.getDriverEnvironment(), caps);
+		if (System.getProperty("profileId").equalsIgnoreCase("mobile")) {
+
+			platformfactory.createDriver(MobileConfiguration.getPlatform());
+		} else if (System.getProperty("profileId").equalsIgnoreCase("web")) {
+
+			MutableCapabilities caps = DriverFactory.setup(WebConfiguration.getDriverEnvironment());
+			DriverFactory.build(WebConfiguration.getDriverEnvironment(), caps);
+		}
+
 	}
 
 	@BeforeMethod

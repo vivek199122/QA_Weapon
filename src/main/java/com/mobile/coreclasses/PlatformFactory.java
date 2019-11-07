@@ -14,7 +14,7 @@ public class PlatformFactory {
 
 	public static AppiumDriver<MobileElement> appiumDriver;
 
-	//private HashMap<String, URL> hosts;
+	// private HashMap<String, URL> hosts;
 
 	private static DesiredCapabilities getCaps(String platformName) {
 
@@ -56,7 +56,8 @@ public class PlatformFactory {
 
 		if (platformName.equalsIgnoreCase("Android")) {
 
-			appiumDriver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), getCaps(platformName));
+			appiumDriver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),
+					getCaps(platformName));
 		} else {
 			appiumDriver = new IOSDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), getCaps(platformName));
 		}

@@ -4,12 +4,11 @@ import org.testng.annotations.Test;
 
 public class WebFirstTest {
 
-	
 	@Test
 	public void smampletest() {
-		
+
 		System.out.println("WebTest");
-		
+		// 50 steps
 	}
-	
+
 }

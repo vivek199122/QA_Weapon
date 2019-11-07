@@ -1,0 +1,5 @@
+REST Command = mvn clean test -Prest -Denv.baseurl=https://reqres.in/ -Devn.apiurl=api/user
+
+Mobile Command =  mvn clean test -Dapp.platform=Android -Dapp.env=local
+
+Web Command = mvn clean test  -Denv.browser.name=chrome -Dapp.env=local env.remote.url=

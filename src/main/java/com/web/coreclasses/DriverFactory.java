@@ -2,7 +2,10 @@ package com.web.coreclasses;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,6 +16,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.configuration.WebConfiguration;
 
@@ -81,6 +86,7 @@ public class DriverFactory {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver((ChromeOptions) caps);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			break;
 		case "edge":
 			WebDriverManager.edgedriver().setup();
@@ -103,6 +109,7 @@ public class DriverFactory {
 
 	public static void DestroyDriver() {
 		driver.quit();
+
 	}
 
 }

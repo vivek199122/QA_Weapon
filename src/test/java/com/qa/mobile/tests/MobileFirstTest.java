@@ -15,9 +15,6 @@ public class MobileFirstTest extends BaseTest {
 		Thread.sleep(11000);
 
 		loginpage.dologin();
-		
-		
-
 
 //
 //		Thread.sleep(2000);

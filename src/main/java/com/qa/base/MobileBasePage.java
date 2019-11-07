@@ -45,9 +45,9 @@ public class MobileBasePage {
 		// getHighlightElement(driver.findElement(by));
 		appiumDriver.findElement(by).sendKeys(keys);
 	}
-	
+
 	public void hideKeyboard() {
-		
+
 		appiumDriver.hideKeyboard();
 	}
 }

@@ -19,7 +19,7 @@ public class MobileConfiguration {
 	public static String getDriverEnvironment() {
 		return get("app.env");
 	}
-	
+
 	public static String getPlatform() {
 		return get("app.platform");
 	}
