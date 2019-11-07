@@ -57,7 +57,7 @@ public class ExtentReportGenerator {
 	public void createExtentReport(Method method) {
 
 		test = extent.createTest(method.getName());
-		test.assignAuthor("Vivek Parmar");
+		test.assignAuthor("Vivek  Parmar");
 		test.assignCategory("Regression--PROD");
 		test.log(Status.INFO, "Executing Test Case:  " + method.getName());
 

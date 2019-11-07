@@ -2,20 +2,19 @@ package com.mobile.coreclasses;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 
 public class PlatformFactory {
 
-	public static AndroidDriver androiddriver;
+	public static AppiumDriver<MobileElement> appiumDriver;
 
-	public static IOSDriver iosdriver;
-
-	private HashMap<String, URL> hosts;
+	//private HashMap<String, URL> hosts;
 
 	private static DesiredCapabilities getCaps(String platformName) {
 
@@ -57,17 +56,17 @@ public class PlatformFactory {
 
 		if (platformName.equalsIgnoreCase("Android")) {
 
-			androiddriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), getCaps(platformName));
+			appiumDriver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), getCaps(platformName));
 		} else {
-			iosdriver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), getCaps(platformName));
+			appiumDriver = new IOSDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), getCaps(platformName));
 		}
 
 	}
 
 	public void killDriver() {
 
-		androiddriver.quit();
-		iosdriver.quit();
+		appiumDriver.close();
+		appiumDriver.quit();
 	}
 
 }

@@ -7,34 +7,19 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import com.mobile.coreclasses.PlatformFactory;
-import com.qa.configuration.MobileConfiguration;
 import com.web.coreclasses.DriverFactory;
 
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
-
-public class BasePage {
+public class WebBasePage {
 
 	public WebDriver driver;
-	public IOSDriver iosdriver;
-	public AndroidDriver androiddriver;
-	PlatformFactory platformfactory;
 	DriverFactory driverfactory;
 
-	private static ThreadLocal<WebDriver> driverinstance = new ThreadLocal<>();
+	static ThreadLocal<WebDriver> driverinstance = new ThreadLocal<>();
 
-	public BasePage() {
-		platformfactory = new PlatformFactory();
-		if (MobileConfiguration.getPlatform().equalsIgnoreCase("android")) {
-			androiddriver = PlatformFactory.androiddriver;
-		} else if (MobileConfiguration.getPlatform().equalsIgnoreCase("ios")) {
-			iosdriver = PlatformFactory.iosdriver;
-		} else {
-			driverfactory = new DriverFactory();
-			driver = DriverFactory.driver;
-		}
+	public WebBasePage() {
 
+		driverfactory = new DriverFactory();
+		driver = DriverFactory.driver;
 	}
 
 	public void click(By by) throws IOException {

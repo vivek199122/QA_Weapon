@@ -12,7 +12,7 @@ public class MobileFirstTest extends BaseTest {
 
 		Loginpage loginpage = new Loginpage();
 
-		Thread.sleep(4000);
+		Thread.sleep(11000);
 
 		loginpage.dologin();
 		
