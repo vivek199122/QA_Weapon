@@ -3,20 +3,31 @@ package com.qa.base;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
+import com.qa.configuration.WebConfiguration;
+import com.rest.coreclasses.enums;
 import com.web.coreclasses.DriverFactory;
+import com.web.pageobject.CareersPage;
+import com.web.pageobject.CaseStudyPage;
 
-public class WebBasePage {
+public class WebBasePage<T> extends enums {
 
 	private static final Logger logger = LoggerFactory.getLogger(WebBasePage.class);
 
 	public WebDriver driver;
 	DriverFactory driverfactory;
+	public static int Seconds = 15;
 
 	static ThreadLocal<WebDriver> driverinstance = new ThreadLocal<>();
 
@@ -49,4 +60,42 @@ public class WebBasePage {
 		driver.findElement(by).sendKeys(keys);
 	}
 
+	public void getHighlightElement(final WebElement element) {
+		try {
+			Wait<WebDriver> wait = new WebDriverWait(driver, Seconds);
+			// Wait for search to complete
+			wait.until(new ExpectedCondition<Boolean>() {
+				@Override
+				public Boolean apply(WebDriver webDriver) {
+					return element != null;
+				}
+			});
+			((JavascriptExecutor) driver).executeScript("arguments[0].style.border='2px solid red'", element);
+		} catch (Exception e) {
+			logger.info("Fail to highlight the Element");
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public WebBasePage<T> detectPage() throws IOException {
+
+		String url = driver.getCurrentUrl();
+
+		String testUrl = WebConfiguration.getRemoteURL();
+
+		if (url.startsWith(testUrl + "services/xerox-case-study/")) {
+
+			return PageFactory.initElements(driver, CaseStudyPage.class);
+
+		} else if (url.startsWith(testUrl + "careers/")) {
+
+			return PageFactory.initElements(driver, CareersPage.class);
+
+		} else {
+			logger.info("URL : " + url);
+			logger.info("No Page Detected");
+			return null;
+		}
+
+	}
 }
