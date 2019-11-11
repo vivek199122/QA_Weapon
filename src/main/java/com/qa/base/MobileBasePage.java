@@ -17,7 +17,8 @@ public class MobileBasePage {
 
 	PlatformFactory platformfactory;
 
-	public MobileBasePage() {
+	public MobileBasePage(AppiumDriver<MobileElement> appiumDriver) {
+		this.appiumDriver = appiumDriver;
 		platformfactory = new PlatformFactory();
 		appiumDriver = PlatformFactory.appiumDriver;
 	}

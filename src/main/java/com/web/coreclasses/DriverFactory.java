@@ -26,12 +26,12 @@ public class DriverFactory {
 	}
 
 	public static MutableCapabilities setup(String env) {
+
 		switch (env) {
 		case "local":
 			return setupLocal();
 		case "remote":
 			return setupRemote();
-
 		default:
 			return null;
 		}
@@ -50,12 +50,15 @@ public class DriverFactory {
 	}
 
 	public static MutableCapabilities setupLocal() {
+
 		String browser = WebConfiguration.getBrowserName();
 		MutableCapabilities caps = null;
 
 		switch (browser.toLowerCase()) {
 		case "chrome":
-			caps = new ChromeOptions();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("--start-maximized");
+			caps = chromeOptions;
 			break;
 		case "edge":
 			caps = new EdgeOptions();
@@ -74,8 +77,8 @@ public class DriverFactory {
 	}
 
 	public static WebDriver buildLocal(MutableCapabilities caps) {
+
 		String browser = WebConfiguration.getBrowserName();
-		// WebDriver dr;
 
 		switch (browser.toLowerCase()) {
 		case "chrome":
@@ -104,7 +107,6 @@ public class DriverFactory {
 
 	public static void DestroyDriver() {
 		driver.quit();
-
 	}
 
 }

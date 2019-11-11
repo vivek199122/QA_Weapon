@@ -14,14 +14,14 @@ import com.web.coreclasses.DriverFactory;
 public class WebBasePage {
 
 	private static final Logger logger = LoggerFactory.getLogger(WebBasePage.class);
-	
+
 	public WebDriver driver;
 	DriverFactory driverfactory;
 
 	static ThreadLocal<WebDriver> driverinstance = new ThreadLocal<>();
 
-	public WebBasePage() {
-
+	public WebBasePage(WebDriver driver) {
+		this.driver = driver;
 		driverfactory = new DriverFactory();
 		driver = DriverFactory.driver;
 	}
@@ -35,14 +35,13 @@ public class WebBasePage {
 		} catch (NoSuchElementException e) {
 			driver.findElement(by).click();
 		} catch (Exception e) {
+			logger.error("Fail to click on link : " + by + " on page : " + e.getMessage());
 			Assert.assertTrue(false, "Fail to click on link : " + by + " on page : " + e.getMessage());
 		}
 	}
 
 	public void timeinterval(int i) throws InterruptedException {
-
 		Thread.sleep(1000 * i);
-
 	}
 
 	public void sendkeys(By by, String keys) {
