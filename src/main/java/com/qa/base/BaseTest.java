@@ -3,6 +3,7 @@ package com.qa.base;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.MutableCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -22,7 +23,7 @@ import com.web.coreclasses.DriverFactory;
 
 public class BaseTest {
 
-	BaseTest basetest;
+	//BaseTest basetest;
 	public static RestClient restClient;
 	public static String requestURL;
 	ExtentReportGenerator extentreportgenerator;
@@ -34,6 +35,7 @@ public class BaseTest {
 		extentreportgenerator = new ExtentReportGenerator();
 		restClient = new RestClient();
 		platformfactory = new PlatformFactory();
+		
 
 	}
 
@@ -41,6 +43,7 @@ public class BaseTest {
 	public void beforeSuite() {
 
 		extentreportgenerator.startExtentReport();
+		PropertyConfigurator.configure("log4j.properties");
 
 	}
 
@@ -54,6 +57,7 @@ public class BaseTest {
 
 			MutableCapabilities caps = DriverFactory.setup(WebConfiguration.getDriverEnvironment());
 			DriverFactory.build(WebConfiguration.getDriverEnvironment(), caps);
+			DriverFactory.driver.get(WebConfiguration.getRemoteURL());
 		}
 
 	}
@@ -80,5 +84,6 @@ public class BaseTest {
 	public void afterSuite() {
 
 		extentreportgenerator.endExtentReport();
+		DriverFactory.DestroyDriver();
 	}
 }

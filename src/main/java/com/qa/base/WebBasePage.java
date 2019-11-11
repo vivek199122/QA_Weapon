@@ -5,12 +5,16 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
 import com.web.coreclasses.DriverFactory;
 
 public class WebBasePage {
 
+	private static final Logger logger = LoggerFactory.getLogger(WebBasePage.class);
+	
 	public WebDriver driver;
 	DriverFactory driverfactory;
 

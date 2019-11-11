@@ -1,6 +1,7 @@
 package com.qa.configuration;
 
 public class MobileConfiguration {
+
 	private MobileConfiguration() {
 	}
 

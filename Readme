@@ -3,3 +3,12 @@ REST Command = mvn clean test -Prest -Denv.baseurl=https://reqres.in/ -Devn.apiu
 Mobile Command =  mvn clean test -Dapp.platform=Android -Dapp.env=local
 
 Web Command = mvn clean test  -Denv.browser.name=chrome -Dapp.env=local env.remote.url=
+
+
+
+
+How to use logger throughout the project
+
+logger.debug("Your message");
+logger.error("Your error",e);
+
