@@ -1,0 +1,4 @@
+14:24:38,282  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+14:24:38,310  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+14:24:42,422 ERROR WebFirstTest:21 - Your error
+14:24:42,423  INFO WebFirstTest:22 - This is info
