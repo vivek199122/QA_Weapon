@@ -6,21 +6,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 
+import com.mobile.coreclasses.MobilePageGenerator;
 import com.mobile.coreclasses.PlatformFactory;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
-public class MobileBasePage {
+public class MobileBasePage extends MobilePageGenerator {
 
 	public AppiumDriver<MobileElement> appiumDriver;
 
 	PlatformFactory platformfactory;
 
 	public MobileBasePage(AppiumDriver<MobileElement> appiumDriver) {
-		this.appiumDriver = appiumDriver;
-		platformfactory = new PlatformFactory();
-		appiumDriver = PlatformFactory.appiumDriver;
+		super(appiumDriver);
 	}
 
 	public void click(By by) throws IOException {
@@ -51,4 +50,5 @@ public class MobileBasePage {
 
 		appiumDriver.hideKeyboard();
 	}
+
 }

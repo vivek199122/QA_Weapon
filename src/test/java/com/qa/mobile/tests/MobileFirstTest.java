@@ -7,10 +7,12 @@ import com.qa.base.BaseTest;
 
 public class MobileFirstTest extends BaseTest {
 
+	Loginpage loginpage;
+
 	@Test
 	public void loginTest() throws Exception {
 
-		Loginpage loginpage = new Loginpage();
+		loginpage = mobilepage.GetInstance(Loginpage.class);
 
 		Thread.sleep(11000);
 

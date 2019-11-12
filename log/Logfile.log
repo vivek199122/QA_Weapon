@@ -2,3 +2,121 @@
 14:24:38,310  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
 14:24:42,422 ERROR WebFirstTest:21 - Your error
 14:24:42,423  INFO WebFirstTest:22 - This is info
+12:52:20,647  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+12:52:20,673  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+12:52:31,976 ERROR WebFirstTest:21 - Your error
+12:52:31,977  INFO WebFirstTest:22 - This is info
+12:53:01,749  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+12:53:01,768  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+12:53:11,360 ERROR WebFirstTest:21 - Your error
+12:53:11,361  INFO WebFirstTest:22 - This is info
+14:21:21,194  INFO WebDriverManager:1077 - Reading https://api.github.com/repos/mozilla/geckodriver/releases to seek geckodriver
+14:21:22,344  INFO WebDriverManager:917 - Latest version of geckodriver is 0.26.0
+14:21:22,367  INFO Downloader:128 - Downloading https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-win64.zip
+14:21:25,807  INFO Downloader:183 - Extracting binary from compressed file geckodriver-v0.26.0-win64.zip
+14:21:25,921  INFO WebDriverManager:1050 - Exporting webdriver.gecko.driver as C:\Users\vparmar\.m2\repository\webdriver\geckodriver\win64\0.26.0\geckodriver.exe
+14:21:40,683 ERROR WebFirstTest:21 - Your error
+14:21:40,683  INFO WebFirstTest:22 - This is info
+14:22:25,480  INFO WebDriverManager:575 - Using msedgedriver pre-installed (since Microsoft Edge 44 is installed in your machine)
+14:22:25,488 ERROR WebDriverManager:722 - There was an error managing msedgedriver pre-installed (MicrosoftWebDriver.exe should be pre-installed in an elevated command prompt executing: dism /Online /Add-Capability /CapabilityName:Microsoft.WebDriver~~~~0.0.1.0)
+io.github.bonigarcia.wdm.WebDriverManagerException: MicrosoftWebDriver.exe should be pre-installed in an elevated command prompt executing: dism /Online /Add-Capability /CapabilityName:Microsoft.WebDriver~~~~0.0.1.0
+	at io.github.bonigarcia.wdm.WebDriverManager.checkPreInstalledVersion(WebDriverManager.java:607)
+	at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:508)
+	at io.github.bonigarcia.wdm.WebDriverManager.setup(WebDriverManager.java:260)
+	at com.web.coreclasses.DriverFactory.buildLocal(DriverFactory.java:90)
+	at com.web.coreclasses.DriverFactory.build(DriverFactory.java:44)
+	at com.qa.base.BaseTest.beforeTest(BaseTest.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:529)
+	at org.testng.TestRunner.run(TestRunner.java:497)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+15:53:52,062  INFO WebDriverManager:575 - Using msedgedriver pre-installed (since Microsoft Edge 44 is installed in your machine)
+15:53:52,073 ERROR WebDriverManager:722 - There was an error managing msedgedriver pre-installed (MicrosoftWebDriver.exe should be pre-installed in an elevated command prompt executing: dism /Online /Add-Capability /CapabilityName:Microsoft.WebDriver~~~~0.0.1.0)
+io.github.bonigarcia.wdm.WebDriverManagerException: MicrosoftWebDriver.exe should be pre-installed in an elevated command prompt executing: dism /Online /Add-Capability /CapabilityName:Microsoft.WebDriver~~~~0.0.1.0
+	at io.github.bonigarcia.wdm.WebDriverManager.checkPreInstalledVersion(WebDriverManager.java:607)
+	at io.github.bonigarcia.wdm.WebDriverManager.manage(WebDriverManager.java:508)
+	at io.github.bonigarcia.wdm.WebDriverManager.setup(WebDriverManager.java:260)
+	at com.web.coreclasses.DriverFactory.buildLocal(DriverFactory.java:90)
+	at com.web.coreclasses.DriverFactory.build(DriverFactory.java:44)
+	at com.qa.base.BaseTest.beforeTest(BaseTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:455)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:529)
+	at org.testng.TestRunner.run(TestRunner.java:497)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+15:54:26,700  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+15:54:26,729  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+15:54:34,790 ERROR WebFirstTest:25 - Your error
+15:54:34,792  INFO WebFirstTest:26 - This is info
+15:54:36,805 ERROR WebBasePage:46 - Fail to click on link : By.xpath: (//a[contains(text(),'Case Studies')])[1] on page : null
+15:57:35,852  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+15:57:35,875  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+15:57:45,774 ERROR WebFirstTest:25 - Your error
+15:57:45,775  INFO WebFirstTest:26 - This is info
+15:57:47,786 ERROR WebBasePage:46 - Fail to click on link : By.xpath: //li[@id='menu-item-3932']//a[contains(text(),'Case Studies')] on page : null
+15:58:44,434  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+15:58:44,456  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+15:58:56,372 ERROR WebFirstTest:25 - Your error
+15:58:56,373  INFO WebFirstTest:26 - This is info
+16:00:03,381  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+16:00:03,400  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+16:00:11,503 ERROR WebFirstTest:25 - Your error
+16:00:11,504  INFO WebFirstTest:26 - This is info
+16:00:18,551 ERROR WebBasePage:46 - Fail to click on link : By.xpath: //li[@id='menu-item-3932']//a[contains(text(),'Case Studies')] on page : null
+16:55:06,383  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+16:55:06,411  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+16:55:15,368 ERROR WebFirstTest:25 - Your error
+16:55:15,369  INFO WebFirstTest:26 - This is info
+16:55:22,380 ERROR WebBasePage:46 - Fail to click on link : By.xpath: //*[@id='menu-item-3932']/a on page : null
+17:06:34,286  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+17:06:34,318  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+17:06:47,818 ERROR WebFirstTest:25 - Your error
+17:06:47,819  INFO WebFirstTest:26 - This is info
+17:06:54,840 ERROR WebBasePage:46 - Fail to click on link : By.xpath: (//a[contains(text(),'Case Studies')])[1] on page : null
+17:10:08,593  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+17:10:08,617  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+17:10:16,915 ERROR WebFirstTest:25 - Your error
+17:10:16,915  INFO WebFirstTest:26 - This is info
+17:10:23,923 ERROR WebBasePage:46 - Fail to click on link : By.xpath: //a[@class='marketing-nav__item marketing-nav__item--user'][contains(text(),'Pricing')] on page : null
+17:12:25,557  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+17:12:25,598  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+17:12:33,325 ERROR WebFirstTest:25 - Your error
+17:12:33,326  INFO WebFirstTest:26 - This is info
+17:14:10,459 ERROR WebBasePage:46 - Fail to click on link : By.xpath: //a[@class='marketing-nav__item marketing-nav__item--user'][contains(text(),'Pricing')] on page : null
+17:21:30,574  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+17:21:30,603  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+17:21:38,263 ERROR WebFirstTest:25 - Your error
+17:21:38,263  INFO WebFirstTest:26 - This is info
+17:59:34,122  INFO WebDriverManager:575 - Using chromedriver 78.0.3904.70 (since Google Chrome 78 is installed in your machine)
+17:59:34,149  INFO WebDriverManager:1050 - Exporting webdriver.chrome.driver as C:\Users\vparmar\.m2\repository\webdriver\chromedriver\win32\78.0.3904.70\chromedriver.exe
+17:59:43,501 ERROR WebFirstTest:25 - Your error
+17:59:43,501  INFO WebFirstTest:26 - This is info

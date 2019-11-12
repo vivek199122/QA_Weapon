@@ -7,7 +7,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,26 +14,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
-import com.qa.configuration.WebConfiguration;
-import com.rest.coreclasses.enums;
-import com.web.coreclasses.DriverFactory;
-import com.web.pageobject.CareersPage;
-import com.web.pageobject.CaseStudyPage;
+import com.web.coreclasses.WebPageGenerator;
 
-public class WebBasePage<T> extends enums {
+public class WebBasePage extends WebPageGenerator {
 
 	private static final Logger logger = LoggerFactory.getLogger(WebBasePage.class);
 
-	public WebDriver driver;
-	DriverFactory driverfactory;
 	public static int Seconds = 15;
+	WebPageGenerator page;
 
 	static ThreadLocal<WebDriver> driverinstance = new ThreadLocal<>();
 
 	public WebBasePage(WebDriver driver) {
-		this.driver = driver;
-		driverfactory = new DriverFactory();
-		driver = DriverFactory.driver;
+		super(driver);
 	}
 
 	public void click(By by) throws IOException {
@@ -76,26 +68,28 @@ public class WebBasePage<T> extends enums {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
-	public WebBasePage<T> detectPage() throws IOException {
+//	@SuppressWarnings("unchecked")
+//	public WebBasePage<T> detectPage() throws IOException {
+//
+//		String url = driver.getCurrentUrl();
+//		
+//
+//		String testUrl = WebConfiguration.getRemoteURL();
+//
+//		if (url.startsWith(testUrl + "services/xerox-case-study/")) {
+//
+//			return PageFactory.initElements(driver, CaseStudyPage.class);
+//
+//		} else if (url.startsWith(testUrl + "careers/")) {
+//
+//			return PageFactory.initElements(driver, CareersPage.class);
+//
+//		} else {
+//			logger.info("URL : " + url);
+//			logger.info("No Page Detected");
+//			return null;
+//		}
+//
+//	}
 
-		String url = driver.getCurrentUrl();
-
-		String testUrl = WebConfiguration.getRemoteURL();
-
-		if (url.startsWith(testUrl + "services/xerox-case-study/")) {
-
-			return PageFactory.initElements(driver, CaseStudyPage.class);
-
-		} else if (url.startsWith(testUrl + "careers/")) {
-
-			return PageFactory.initElements(driver, CareersPage.class);
-
-		} else {
-			logger.info("URL : " + url);
-			logger.info("No Page Detected");
-			return null;
-		}
-
-	}
 }
