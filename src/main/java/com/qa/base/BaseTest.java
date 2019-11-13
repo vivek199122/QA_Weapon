@@ -12,15 +12,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
-import com.mobile.coreclasses.MobilePageGenerator;
-import com.mobile.coreclasses.PlatformFactory;
 import com.qa.configuration.MobileConfiguration;
 import com.qa.configuration.RestConfiguration;
 import com.qa.configuration.WebConfiguration;
 import com.qa.extentreport.configuration.ExtentReportGenerator;
-import com.rest.coreclasses.RestClient;
-import com.web.coreclasses.DriverFactory;
-import com.web.coreclasses.WebPageGenerator;
+import com.qa.mobile.coreclasses.MobilePageGenerator;
+import com.qa.mobile.coreclasses.PlatformFactory;
+import com.qa.rest.coreclasses.RestClient;
+import com.qa.web.coreclasses.DriverFactory;
+import com.qa.web.coreclasses.WebPageGenerator;
 
 public class BaseTest {
 

@@ -1,4 +1,4 @@
-package com.web.coreclasses;
+package com.qa.web.coreclasses;
 
 import java.net.MalformedURLException;
 import java.net.URL;

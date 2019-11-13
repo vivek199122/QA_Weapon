@@ -1,4 +1,4 @@
-package com.web.pageobject;
+package com.qa.web.pageobject;
 
 import java.io.IOException;
 

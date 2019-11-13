@@ -1,4 +1,4 @@
-package com.rest.coreclasses;
+package com.qa.rest.coreclasses;
 
 import java.io.IOException;
 import java.util.HashMap;

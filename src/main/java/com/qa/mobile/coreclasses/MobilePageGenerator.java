@@ -1,4 +1,4 @@
-package com.mobile.coreclasses;
+package com.qa.mobile.coreclasses;
 
 import org.openqa.selenium.support.PageFactory;
 

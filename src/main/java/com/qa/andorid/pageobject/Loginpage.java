@@ -1,4 +1,4 @@
-package com.andorid.pageobject;
+package com.qa.andorid.pageobject;
 
 import java.io.IOException;
 

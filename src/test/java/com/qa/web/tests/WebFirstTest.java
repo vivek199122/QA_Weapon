@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import com.qa.base.BaseTest;
-import com.web.pageobject.HomePage;
+import com.qa.web.pageobject.HomePage;
 
 public class WebFirstTest extends BaseTest{
 

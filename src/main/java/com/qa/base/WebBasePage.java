@@ -14,7 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
-import com.web.coreclasses.WebPageGenerator;
+import com.qa.web.coreclasses.WebPageGenerator;
 
 public class WebBasePage extends WebPageGenerator {
 

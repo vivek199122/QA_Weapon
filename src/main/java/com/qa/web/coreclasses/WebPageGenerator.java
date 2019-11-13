@@ -1,4 +1,4 @@
-package com.web.coreclasses;
+package com.qa.web.coreclasses;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

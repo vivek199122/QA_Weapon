@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.base.BaseTest;
 import com.qa.request_body.UserRequest;
 import com.qa.response_body.UserResponse;
-import com.rest.coreclasses.Constant;
+import com.qa.rest.coreclasses.Constant;
 
 public class RestFirstTest extends BaseTest {
 

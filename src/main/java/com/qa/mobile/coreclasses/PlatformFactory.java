@@ -1,4 +1,4 @@
-package com.mobile.coreclasses;
+package com.qa.mobile.coreclasses;
 
 import java.net.MalformedURLException;
 import java.net.URL;

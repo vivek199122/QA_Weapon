@@ -2,7 +2,7 @@ package com.qa.mobile.tests;
 
 import org.testng.annotations.Test;
 
-import com.andorid.pageobject.Loginpage;
+import com.qa.andorid.pageobject.Loginpage;
 import com.qa.base.BaseTest;
 
 public class MobileFirstTest extends BaseTest {
